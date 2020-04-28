@@ -1,23 +1,39 @@
-* {
-  box-sizing: border-box;
-}
+
 
 :root {
-box-sizing: border-box;
 background-color: #101010;
 margin: 0;
 padding: 0;
 }
 
+#wrapper {
+  max-width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #headcase {
   background-color: #101010;
+  background-image: url(../images/ESBOpeningCrawl3.png);
+  max-width: 1800;
+  height: 200px;
+  position: fixed;
+  z-index: 10;
+}
+.crawl {
+ 
 }
 header {
   display: flex;
   justify-content: center;
   color: #27a1e3;
   font-family: "Libre Franklin";
-  margin-bottom: 1rem;
+  height: 200px;
+  
+}
+
+.SW_logo {
+  transform: scale(0.7);
 }
 
 h1 {
@@ -51,6 +67,15 @@ a> img {
 .nav {
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
+  border-bottom: solid 2px #f0e704;
+  margin-bottom: 10px; 
+  background-color: #101010;
+  filter: drop-shadow(0mm 7mm 3mm #101010);
+}
+
+.navEffect {
+height: 56px;
 }
 
 Button {
@@ -66,7 +91,7 @@ Button {
 /*button states*/
 #maleButton {
   border: solid 2px #7b8da5;
-  border-radius: 35px 0px 0px 5px;
+  border-radius: 5px 0px 0px 25px;
 }
 #maleButton:hover {
   background-color: #27a1e3;
@@ -102,7 +127,7 @@ Button {
 }
 #otherButton {
   border: solid 2px #7b8da5;
-  border-radius: 0px 35px 5px 0px;
+  border-radius: 0px 5px 25px 0px;
 }
 #otherButton:hover {
   background-color: #27a1e3;
@@ -122,43 +147,87 @@ Button {
   color: #8ff2ff;
 }
 /*button states*/
+.quire {
+  margin-left: 1.9rem;
+  margin-right: 1.9rem;
+  padding: 3.6rem;
+  padding-top: 2rem;
+  position: fixed; 
+  overflow-y: scroll;
+  top: 250px; left: 0; right: 0; bottom: 0;
+}
 
+.quire::-webkit-scrollbar {
+  display: none;
+}
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   justify-content: space-evenly;
-}
-
-/*linear-Smoke*/
-.airflow {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  
 
 }
 
-.card-one {
-  position: block;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: -4vw;
-  transform-origin: center center;
-  perspective: 2000px;
-  backface-visibility: visible;
-  background-repeat: no-repeat;
-  background-image: url(../images/starburst.png);
-  transform: rotatey(180deg);
+/* stars */
+
+#space, .stars {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-/*rotate*/
-          .card-one {
-              -webkit-animation: rotation 15.4s infinite linear;
-          }
-          @-webkit-keyframes rotation {
-              from {-webkit-transform: rotatey(0deg);
-              }
-              to {-webkit-transform: rotatey(359deg);
-              }
-          } 
+.stars {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 5s infinite;
+  opacity: 0;
+}
+
+.stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+.stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 1s;
+}
+.stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 2s;
+}
+.stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 3s;
+}
+.stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 4s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  } 
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
