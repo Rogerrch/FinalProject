@@ -8,6 +8,7 @@ padding: 0;
 
 #wrapper {
   max-width: 1080px;
+  height: auto;
   margin-right: auto;
   margin-left: auto;
 }
@@ -147,8 +148,9 @@ Button {
 }
 /*button states*/
 .quire {
-  margin-left: 1.9rem;
-  margin-right: 1.9rem;
+  max-width: 1080;
+  margin-left: 9.9%;
+  margin-right: 9.9%;
   padding: 3.6rem;
   padding-top: 2rem;
   position: fixed; 
